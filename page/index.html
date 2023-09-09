@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animalist | Main Page</title>
+
+    <!-- TAILWIND START -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <!-- TAILWIND END -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="overflow-x: hidden;" class="bg-fixed">
+    <!-- MAIN START -->
+    <main style="transform:translate(-50%,0);height:fit-content" class="border-indigo-200 border shadow-xl bg-gradient-to-r from-fuchsia-950 to-transparent rounded-xl px-20 py-4 fixed top-0 left-1/2 drop-shadow-xl z-20 text text-white font-sans text-center title bottom-0 m-auto mt-4 mb-14">
+      <a href="../landing/index.html">
+        <h1 class="text-5xl drop-shadow-xl cursor-pointer w-fit m-auto" style="font-family: 'Freckle Face'">Animalist</h1>
+      </a>
+      <p class="text-lg drop-shadow-xl" style="font-family: 'Freckle Face'">Your best choice</p>
+      <form class="mt-4" action="" autocomplete="on">
+        <input autofocus required pattern="[a-zA-Z\d\s:!.]{1,}" oninvalid="this.setCustomValidity('No symbols allowed!')" onchange="this.setCustomValidity('')" placeholder="Enter some anime related.." type="text" class="invalid:outline-red-900 valid:outline-green-900 text-sm text-white bg-slate-950 rounded-lg w-80 h-8 m-auto px-4 border-slate-600 border-2">
+        </input>
+        <button id="submitbtn" type="button" class="cursor-pointer text-lg rounded bg-yellow-400 w-7 h-7">🔍</button>
+      </form>
+    </main>
+    <!-- MAIN END -->
+
+    <!-- ANIME START -->
+    <h1 id="txtAnime" class="mt-60 hidden text-white text-center text-3xl" style="font-family: 'Freckle Face';grid-area: title;">Anime</h1>
+    <section id="sectionAnime" class="flex justify-center flex-wrap m-auto pb-10" style="max-width:70em;grid-template-areas: 'title title title';grid-template-rows: .1fr 1fr;"></section>
+    <!-- ANIME END -->
+
+    <!-- MANGA START -->
+    <h1 id="txtManga" class="hidden text-white text-center text-3xl mt-10" style="font-family: 'Freckle Face';grid-area: title;">Manga</h1>
+    <section id="sectionManga" class="flex justify-center flex-wrap m-auto pb-10" style="max-width:70em;grid-template-areas: 'title title title';grid-template-rows: .1fr 1fr;"></section>
+    <!-- MANGA END -->
+
+    <!-- CHARACTERS START -->
+    <h1 id="txtChar" class="hidden text-white text-center text-3xl mt-10" style="font-family: 'Freckle Face';grid-area: title;">Characters</h1>
+    <section id="sectionChar" class="flex justify-center flex-wrap m-auto pb-10" style="max-width:70em;grid-template-areas: 'title title title';grid-template-rows: .1fr 1fr;"></section>
+    <!-- CHARACTERS END  -->
+
+    <!-- BUTTON TOTOP TOBOTTOM START -->
+    <a id="toTop" href="#" class="fixed top-48 left-1/2 hidden h-fit" style="transform: translate(-50%,0);">
+      <div style="background-image:url('../img/scrolldown.png');width:2em;height:2em" class="rotate-180 m-auto bg-cover bg-center cursor-pointer hover:scale-105 hover:opacity-90 transition"></div>
+    </a>
+    <a id="toBottom" href="#end" class="fixed bottom-10 left-1/2 h-fit hidden" style="transform: translate(-50%,0);">
+      <div style="background-image:url('../img/scrolldown.png');width:2em;height:2em" class="m-auto bg-cover bg-center cursor-pointer hover:scale-105 hover:opacity-90 transition"></div>
+    </a>
+    <!-- BUTTON TOTOP TOBOTTOM END -->
+
+    <!-- DIV END -->
+    <div id="end" class="scroll-smooth"></div>
+  </body>
+  <script src="script.js"></script>
+</html>
