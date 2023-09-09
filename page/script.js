@@ -80,8 +80,8 @@ function setAnime(animes) {
   section1.innerHTML = ``;
 
   for (anime of animes) {
-    section1.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer" style="height:31em;width:18em">
-          <div alt="" style="height:22em;width:100%;background-image: url(${anime.images.jpg.image_url});" class=" bg-slate-950 bg-no-repeat m-auto bg-contain
+    section1.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer" style="height:29em;width:16em">
+          <div alt="" style="height:22em;width:100%;background-image: url(${anime.images.jpg.image_url});" class="bg-slate-950 bg-no-repeat m-auto bg-contain
            bg-center"></div>
           <div class="m-auto font-sans text-sm text-white">
             <h2 class="mt-2 mx-4 text-md font-semibold">${anime.title}</h2>
@@ -104,7 +104,7 @@ function setManga(mangas) {
   section2.innerHTML = ``;
 
   for (manga of mangas) {
-    section2.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer" style="height:31em;width:18em">
+    section2.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer" style="height:29em;width:16em">
           <div alt="" style="height:22em;width:100%;background-image: url(${manga.images.jpg.image_url});" class=" bg-slate-950 bg-no-repeat m-auto bg-contain bg-center"></div>
           <div class="m-auto font-sans text-sm text-white">
             <h2 class="mt-2 mx-4 text-md font-semibold">${manga.title}</h2>
@@ -127,8 +127,8 @@ function setChar(chars) {
   section3.innerHTML = ``;
 
   for (char of chars) {
-    section3.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer" style="height:28em;width:13em">
-          <div alt="" style="height:21em;width:100%;background-image: url(${char.images.jpg.image_url});" class=" bg-slate-950 bg-no-repeat m-auto bg-contain bg-center"></div>
+    section3.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer" style="height:27em;width:12em">
+          <div alt="" style="height:20em;width:100%;background-image: url(${char.images.jpg.image_url});" class=" bg-slate-950 bg-no-repeat m-auto bg-contain bg-center"></div>
           <div class="m-auto font-sans text-sm text-white">
             <h2 class="mt-2 mx-4 text-md font-semibold">${char.name}</h2>
             <p class="mt-2 mx-4 inline">${char.name_kanji == null ? "No Kanji Name" : char.name_kanji}</p>

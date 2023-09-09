@@ -23,7 +23,7 @@ window.addEventListener("scroll", (e) => {
     const offset = 100;
 
     platform.style.bottom = (value / height) * 1000 + "px";
-    rock.style.transform = "translateX(" + (value / height) * 1200 + "px)";
+    rock.style.right = -value * 1.5 + "px";
     text.style.bottom = value * 0.4 + "px";
   }
 });

@@ -20,15 +20,15 @@
   </head>
   <body style="overflow-x: hidden;" class="bg-fixed">
     <!-- MAIN START -->
-    <main style="transform:translate(-50%,0);height:fit-content" class="border-indigo-200 border shadow-xl bg-gradient-to-r from-fuchsia-950 to-transparent rounded-xl px-20 py-4 fixed top-0 left-1/2 drop-shadow-xl z-20 text text-white font-sans text-center title bottom-0 m-auto mt-4 mb-14">
+    <main style="transform:translate(-50%,0);height:fit-content" class="border-indigo-200 border shadow-xl bg-gradient-to-r from-fuchsia-950 to-transparent rounded-xl px-20 py-4 fixed top-0 left-1/2 drop-shadow-xl z-20 text-white font-sans text-center title bottom-0 m-auto mt-4 mb-14">
       <a href="../index.html">
-        <h1 class="text-5xl drop-shadow-xl cursor-pointer w-fit m-auto" style="font-family: 'Freckle Face'">Animalist</h1>
+        <h1 class="lg:text-5xl md:text-4xl text-3xl drop-shadow-xl cursor-pointer w-fit m-auto" style="font-family: 'Freckle Face'">Animalist</h1>
       </a>
-      <p class="text-lg drop-shadow-xl" style="font-family: 'Freckle Face'">Your best choice</p>
+      <p class="md:text-lg sm:text-md text-sm drop-shadow-xl" style="font-family: 'Freckle Face'">Your best choice</p>
       <form class="mt-4" action="" autocomplete="on">
-        <input autofocus required pattern="[a-zA-Z\d\s:!.]{1,}" oninvalid="this.setCustomValidity('No symbols allowed!')" onchange="this.setCustomValidity('')" placeholder="Enter some anime related.." type="text" class="invalid:outline-red-900 valid:outline-green-900 text-sm text-white bg-slate-950 rounded-lg w-80 h-8 m-auto px-4 border-slate-600 border-2">
+        <input autofocus required pattern="[a-zA-Z\d\s:!.]{1,}" oninvalid="this.setCustomValidity('No symbols allowed!')" onchange="this.setCustomValidity('')" placeholder="Enter some anime related.." type="text" class="invalid:outline-red-900 valid:outline-green-900 text-sm text-white bg-slate-950 rounded-lg lg:w-80 md:w-60 w-30 h-8 inline-block m-auto px-4 border-slate-600 border-2">
         </input>
-        <button id="submitbtn" type="button" class="cursor-pointer text-lg rounded bg-yellow-400 w-7 h-7">🔍</button>
+        <button id="submitbtn" type="button" class="cursor-pointer text-lg rounded bg-yellow-400 w-7 h-7 md:inline-block hidden">🔍</button>
       </form>
     </main>
     <!-- MAIN END -->
