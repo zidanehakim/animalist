@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Freckle Face";
-  src: url("../font/FreckleFace-Regular.ttf");
+  src: url("../font/FreckleFace-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Josefin Sans Thin";
-  src: url("../font/JosefinSans-ExtraLight.ttf");
+  src: url("../font/JosefinSans-ExtraLight.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Mirza";
-  src: url("../font/Mirza-Regular.ttf");
+  src: url("../font/Mirza-Regular.woff2") format("woff2");
 }
 
 body {
