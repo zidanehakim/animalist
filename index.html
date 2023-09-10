@@ -20,20 +20,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body style="overflow-x: hidden">
-    <div style="width: 120em" class="flex flex-cols flex-wrap content-center items-start m-auto shadow-2xl">
+    <div style="max-width: 120em" class="flex flex-cols flex-wrap content-center items-start m-auto shadow-2xl">
       <!-- HEADER START -->
-      <header style="width: 120em; height: 2000px" class="m-auto">
-        <div style="height: 92vh; max-width: 108em" class="m-auto sticky top-0 overflow-hidden">
+      <header style="width: 108em; height: 2000px" class="m-auto">
+        <div style="height: 92vmin; max-width: 108em" class="m-auto sticky top-0 overflow-hidden">
           <div style="transform: translate(-50%, 0%)" class="drop-shadow-xl z-20 text text-white font-sans text-center title absolute left-1/2 bottom-0">
             <h1 class="text-7xl drop-shadow-xl" style="font-family: 'Freckle Face'">Animalist</h1>
             <p class="text-xl drop-shadow-xl" style="font-family: 'Freckle Face'">Your best choice</p>
           </div>
 
           <div style="height:100%;width:100%;background-color:  rgba(0,0,0,0.25);" class="z-10 absolute"></div>
-          <img style="height: 100%" class="right-0 rock object-cover absolute z-20" src="img/rock.png" alt="Rock Vector" />
-          <img style="height: 100%; transform: translate(-50%, 0%); width: 100%;" class="leftrock object-cover absolute left-1/2 z-20" src="img/leftrock.png" alt="Left Rock Vector" />
-          <img style="height: 100%; transform: translate(-50%, 0%); width: 100%" class="platform object-cover absolute left-1/2 z-10" src="img/platform.png" alt="Platform Vector" />
-          <img style="height: 100%; transform: translate(-50%, 0%); min-width: 100%" class="opacity-80 bg object-cover absolute left-1/2 z-0" src="img/bg.png" alt="Background Vector" />
+          <img class="lg:-bottom-40 -bottom-20 right-0 rock object-cover absolute z-20" src="img/rock.png" alt="Rock Vector" />
+          <img style="transform: translate(-50%, 0%);" class="leftrock object-cover absolute bottom-0 left-1/2 z-20" src="img/leftrock.png" alt="Left Rock Vector" />
+          <img style="transform: translate(-50%, 0%);" class="platform object-cover absolute bottom-0 left-1/2 z-10" src="img/platform.png" alt="Platform Vector" />
+          <img style="height:100%;transform: translate(-50%, 0%); width: 100%" class="opacity-80 bg object-cover absolute bottom-0 left-1/2 z-0" src="img/bg.png" alt="Background Vector" />
           <svg class="block" fill="#F0C01D" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
           </svg>
@@ -52,26 +52,26 @@
       <!-- SVG END -->
 
       <!-- SECTION ABOUT START -->
-      <section style="width: 70em" class="m-auto border-red-600">
-        <div class="w-fit ml-60 pb-60 mt-10 font-bold text-4xl" style="font-family: 'Josefin Sans Thin'">
+      <section style="max-width: 70em" class="m-auto border-red-600 mt-20">
+        <div class="w-fit font-bold md:text-4xl text-3xl m-auto" style="font-family: 'Josefin Sans Thin'">
           <h2 class="text-white">Keep on dreaming</h2>
-          <h2 class="text-white mx-20 mt-10">we <span class="text-fuchsia-400">weebs</span> are faithful</h2>
-          <h2 class="text-yellow-300 mx-40 mt-10">to our waifu ^^</h2>
+          <h2 class="text-white md:mx-20 mt-10">we <span class="text-fuchsia-400">weebs</span> are faithful</h2>
+          <h2 class="text-yellow-300 md:mx-40 mt-10">to our waifu ^^</h2>
         </div>
 
-        <div class="grid" style="font-family: 'Mirza'; grid-template-columns: 1fr 2fr">
-          <div class="relative duration-200">
-            <img style="width: 13em;" class="z-10 hover:-translate-y-5 hover:scale-110 transition absolute right-0 w-96 justify-self-end" src="img/char1.png" alt="Character1" />
-            <img class="absolute right-64" style="width: 6em" src="img/orna1.png" alt="" />
+        <div class="about grid justify-center items-center mt-40" style="font-family: 'Mirza'">
+          <div class="grid justify-center md:justify-end">
+            <img style="width: 6em" src="img/orna1.png" alt="" />
+            <img class="z-10 hover:-translate-y-5 hover:scale-110 transition w-96 justify-self-end" src="img/char1.png" alt="Character1" />
           </div>
-          <p class="text-white text-2xl px-8 leading-loose mt-20 border-r-yellow-400 border-r-8">Website provides you with completed informations of an <span class="text-fuchsia-400">anime </span> you would like to search for!</p>
+          <p class="text-white text-2xl px-8 leading-loose mt-10 border-r-yellow-400 border-r-8">Website provides you with completed informations of an <span class="text-fuchsia-400">anime </span> you would like to search for!</p>
         </div>
       </section>
       <!-- SECTION ABOUT END -->
 
       <!-- SECTION CARDS START -->
-      <section style="width: 70em" class="m-auto border-red-600 mt-80">
-        <div class="grid" style="font-family: 'Mirza'; grid-template-columns: 1.3fr 1.5fr">
+      <section style="max-width: 70em" class="m-auto border-red-600 md:mt-60 mt-20">
+        <div class="grid cards justify-center" style="font-family: 'Mirza';">
           <div class="text">
             <p class="text-white text-2xl px-20 leading-loose mt-20 border-l-yellow-400 border-l-8">Top airing anime today! Read with ease and simple yet elegant UI.</p>
             <ul class="text-white text-2xl pl-32 list-disc">
@@ -80,45 +80,45 @@
               <li class="mt-8 text-fuchsia-400">Visually great</li>
             </ul>
           </div>
-          <div class="relative mt-16">
-            <img class="absolute right-72 -top-32 z-10" style="width: 6em" src="img/orna2.png" alt="" />
-            <img style="width: 13em" class="hover:-translate-y-5 hover:scale-110 transition object-cover -rotate-12 w-96 justify-self-end border-8 border-white absolute" src="img/aot.jpg" alt="AOT" />
-            <img style="width: 13em; right: 33%; top: -2em" class="hover:-translate-y-5 hover:scale-110 transition object-cover w-96 justify-self-end border-8 border-white absolute" src="img/bnha.jpg" alt="BNHA" />
-            <img style="width: 13em; right: 0" class="hover:-translate-y-5 hover:scale-110 transition object-cover rotate-12 w-96 justify-self-end border-8 border-white absolute" src="img/kny.jpg" alt="KNY" />
+          <div class="relative mt-16 h-60">
+            <img class="absolute right-0 bottom-0 z-10 orna" src="img/orna2.png" alt="" />
+            <img class="hover:-translate-y-5 hover:scale-110 transition object-cover -rotate-12 w-96 justify-self-end border-8 border-white absolute" src="img/aot.jpg" alt="AOT" />
+            <img style="right: 33%; top: -2em" class="hover:-translate-y-5 hover:scale-110 transition object-cover w-96 justify-self-end border-8 border-white absolute" src="img/bnha.jpg" alt="BNHA" />
+            <img style="right: 0" class="hover:-translate-y-5 hover:scale-110 transition object-cover rotate-12 w-96 justify-self-end border-8 border-white absolute" src="img/kny.jpg" alt="KNY" />
           </div>
         </div>
       </section>
       <!-- SECTION CARDS END -->
 
       <!-- SECTION WAIFU START -->
-      <section style="width: 75em" class="m-auto border-red-600 mt-60">
+      <section style="max-width: 75em" class="m-auto border-red-600 md:mt-60 mt-40">
         <h2 class="text-white text-4xl text-center font-bold" style="font-family: 'Josefin Sans Thin'">The <span class="text-fuchsia-400">Term</span> <span class="text-yellow-400">"Waifu"</span></h2>
-        <div class="flex items-start justify-center mt-24 relative">
-          <img class="absolute right-48 -top-28 z-10" style="width: 6em" src="img/orna3.png" alt="" />
-          <img class="hover:-translate-y-5 hover:scale-110 transition" style="width: 10em" class="" src="img/waifu1.png" alt="Waifu1" />
-          <img class="hover:-translate-y-5 hover:scale-110 transition" style="width: 10em" class="" src="img/waifu2.png" alt="Waifu2" />
-          <img class="hover:-translate-y-5 hover:scale-110 transition" style="width: 10em" class="" src="img/waifu3.png" alt="Waifu3" />
-          <img class="hover:-translate-y-5 hover:scale-110 transition" style="width: 10em" class="" src="img/waifu4.png" alt="Waifu4" />
-          <img class="hover:-translate-y-5 hover:scale-110 transition" style="width: 10em" class="" src="img/waifu5.png" alt="Waifu5" />
-          <img class="absolute left-48 -bottom-12 z-10" style="width: 6em" src="img/orna4.png" alt="" />
+        <div class="waifu flex items-start justify-center mt-24 relative">
+          <img class="absolute right-48 -top-28 z-10 orna" src="img/orna3.png" alt="" />
+          <img class="hover:-translate-y-5 hover:scale-110 transition" class="" src="img/waifu1.png" alt="Waifu1" />
+          <img class="hover:-translate-y-5 hover:scale-110 transition" class="" src="img/waifu2.png" alt="Waifu2" />
+          <img class="hover:-translate-y-5 hover:scale-110 transition" class="" src="img/waifu3.png" alt="Waifu3" />
+          <img class="hover:-translate-y-5 hover:scale-110 transition" class="" src="img/waifu4.png" alt="Waifu4" />
+          <img class="hover:-translate-y-5 hover:scale-110 transition" class="" src="img/waifu5.png" alt="Waifu5" />
+          <img class="absolute left-48 -bottom-12 z-10 orna" src="img/orna4.png" alt="" />
         </div>
-        <div class="text-white text-2xl grid grid-cols-2 mt-20 justify-center" style="font-family: 'Mirza'; grid-template-columns: 1.3fr 1.5fr">
-          <div class="ml-60">
+        <div class="text-white text-2xl grid grid-cols-1 md:grid-cols-2 mt-20 justify-center" style="font-family: 'Mirza'">
+          <div class="text-center">
             <p>Various different types.</p>
             <ul>
-              <li class="mt-8 text-sky-300" style="list-style-type: '🥶';">Kuudere</li>
-              <li class="mt-8 text-red-400" style="list-style-type: '🔥';">Tsundere</li>
-              <li class="mt-8 text-pink-300" style="list-style-type: '🌸';">Dandere</li>
-              <li class="mt-8 text-purple-300" style="list-style-type: '😈';">Yandere</li>
+              <li class="mt-8 mx-40 text-sky-300" style="list-style-type: '🥶';">Kuudere</li>
+              <li class="mt-8 mx-40 text-red-400" style="list-style-type: '🔥';">Tsundere</li>
+              <li class="mt-8 mx-40 text-pink-300" style="list-style-type: '🌸';">Dandere</li>
+              <li class="mt-8 mx-40 text-purple-300" style="list-style-type: '😈';">Yandere</li>
           </div>
-          <p class="border-l-8 border-l-yellow-400 px-20 leading-loose">Noun. <span class="text-fuchsia-400">waifu (plural waifu or waifus)</span> (fandom slang, Internet slang) A fictional female character from non-live-action visual media (typically an anime, manga, or video game) to whom one is romantically attracted and/or whom one considers their significant other.</p>
+          <p class="border-r-8 border-r-yellow-400 md:border-l-8 md:border-r-0 md:border-l-yellow-400 md:mx-0 md:px-20 mx-40 mt-10 px-5 md:mt-0 leading-loose">Noun. <span class="text-fuchsia-400">waifu (plural waifu or waifus)</span> (fandom slang, Internet slang) A fictional female character from non-live-action visual media (typically an anime, manga, or video game) to whom one is romantically attracted and/or whom one considers their significant other.</p>
         </div>
         </ul>
       </section>
       <!-- SECTION WAIFU END -->
       
       <!-- SECTION STORY START -->
-      <section style="width: 70em; grid-template-columns: 1fr 1fr;" class="flex m-auto border-red-600 mt-48 justify-center">
+      <section style="max-width: 70em;" class="m-auto border-red-600 mt-48 justify-center md:flex hidden">
         <div class="relative" style="width:25em">
           <img class="absolute -left-8 -top-8 z-10 rotate-12" style="width: 3em" src="img/orna5.png" alt="" />
           <img class="absolute -left-8 -bottom-8 z-10" style="width: 3em" src="img/orna5.png" alt="" />
@@ -136,7 +136,7 @@
       <!-- SECTION STORY END -->
 
       <!-- SECTION GETTING STARTED START -->
-      <section style="width: 85em" class="m-auto border-red-600 mt-40 mb-10">
+      <section style="width: 80em" class="m-auto border-red-600 mt-40 mb-10">
         <h2 class="font-bold text-3xl text-center text-white" style="font-family: 'Josefin Sans Thin'">
           Getting Started
         </h2>

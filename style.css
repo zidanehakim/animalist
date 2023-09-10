@@ -22,3 +22,57 @@ li {
   list-style-type: "👉";
   padding-inline-start: 1ch;
 }
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 0.7fr;
+    grid-template-rows: 0.1fr 0.3fr;
+  }
+
+  .about img:last-child {
+    width: 10em;
+  }
+
+  .cards {
+    grid-template-columns: 0.8fr;
+    grid-template-rows: 0.1fr 0.1fr;
+  }
+
+  .cards div:last-child img:not(.orna) {
+    width: 10em;
+  }
+
+  .waifu img {
+    width: 6em;
+  }
+
+  div .orna {
+    width: 4em;
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    grid-template-columns: 0.5fr 1.5fr;
+  }
+
+  .about img:last-child {
+    width: 13em;
+  }
+
+  .cards {
+    grid-template-columns: 1.3fr 1.5fr;
+  }
+
+  .cards div:last-child img:not(.orna) {
+    width: 13em;
+  }
+
+  div .waifu img {
+    width: 10em;
+  }
+
+  .orna {
+    width: 6em;
+  }
+}
