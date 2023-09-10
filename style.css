@@ -23,7 +23,7 @@ li {
   padding-inline-start: 1ch;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .about {
     grid-template-columns: 0.7fr;
     grid-template-rows: 0.1fr 0.3fr;
@@ -39,15 +39,19 @@ li {
   }
 
   .cards div:last-child img:not(.orna) {
-    width: 10em;
+    width: 5em;
   }
 
   .waifu img {
-    width: 6em;
+    width: 5em;
   }
 
   div .orna {
     width: 4em;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -65,14 +69,46 @@ li {
   }
 
   .cards div:last-child img:not(.orna) {
-    width: 13em;
+    width: 12em;
   }
 
   div .waifu img {
-    width: 10em;
+    width: 8em;
   }
 
   .orna {
     width: 6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 0.7fr;
+    grid-template-rows: 0.1fr 0.3fr;
+  }
+
+  .about img:last-child {
+    width: 10em;
+  }
+
+  .cards {
+    grid-template-columns: 0.8fr;
+    grid-template-rows: 0.1fr 0.1fr;
+  }
+
+  .cards div:last-child img:not(.orna) {
+    width: 8em;
+  }
+
+  .waifu img {
+    width: 6em;
+  }
+
+  div .orna {
+    width: 4em;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
   }
 }
