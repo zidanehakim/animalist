@@ -25,6 +25,6 @@ window.addEventListener("scroll", (e) => {
     platform.style.bottom = (value / height) * 1000 + "px";
     rock.style.right = -value * 1.5 + "px";
     rock.style.opacity = 1 - value / height;
-    text.style.bottom = value * 0.4 + "px";
+    text.style.bottom = value * 0.3 + "px";
   }
 });
