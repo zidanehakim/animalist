@@ -107,7 +107,7 @@ function setAnime(animes) {
 
   for (anime of animes) {
     if (age) {
-      section1.innerHTML += `<div class="mx-10 bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer obj" style="height:29em;width:16em">
+      section1.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer obj" style="height:29em;width:16em">
               <div alt="" style="height:22em;width:100%;background-image: url(${anime.images.jpg.image_url});" class="bg-slate-950 bg-no-repeat m-auto bg-contain
                bg-center"></div>
               <div class="m-auto font-sans text-sm text-white">
@@ -119,7 +119,7 @@ function setAnime(animes) {
             </div>`;
     } else {
       rating = anime.rating[0];
-      section1.innerHTML += `<div class="mx-10 bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer obj" style="height:29em;width:16em">
+      section1.innerHTML += `<div class="bg-slate-950 rounded overflow-hidden mt-5 m-auto shadow-xl overflow-y-auto hover:scale-105 transition cursor-pointer obj" style="height:29em;width:16em">
               <div alt="" style="height:22em;width:100%;background-image: url(${rating != "R" ? anime.images.jpg.image_url : "../img/restricted.png"});" class="bg-slate-950 bg-no-repeat m-auto bg-contain
                bg-center"></div>
               <div class="m-auto font-sans text-sm text-white">
