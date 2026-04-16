@@ -3,62 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animalist | Main Page</title>
+    <title>Animalist | Search</title>
 
-    <!-- TAILWIND START -->
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {},
-        },
-      };
+      tailwind.config = { theme: { extend: {} } };
     </script>
-    <!-- TAILWIND END -->
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="overflow-x: hidden;" class="bg-fixed">
-    <!-- MAIN START -->
-    <main style="transform:translate(-50%,0);height:fit-content" class="border-indigo-200 border shadow-xl bg-gradient-to-r from-fuchsia-950 to-transparent rounded-xl px-20 py-4 fixed top-0 left-1/2 drop-shadow-xl z-20 text-white font-sans text-center title bottom-0 m-auto mt-4 mb-14">
-      <a href="../index.html">
-        <h1 class="lg:text-5xl md:text-4xl text-3xl drop-shadow-xl cursor-pointer w-fit m-auto" style="font-family: 'Freckle Face'">Animalist</h1>
-      </a>
-      <p class="md:text-lg sm:text-md text-sm drop-shadow-xl" style="font-family: 'Freckle Face'">Your best choice</p>
-      <form class="mt-4" action="" autocomplete="on">
-        <input autofocus required pattern="[a-zA-Z\d\s:!.]{1,}" oninvalid="this.setCustomValidity('No symbols allowed!')" onchange="this.setCustomValidity('')" placeholder="Enter some anime related.." type="text" class="invalid:outline-red-900 valid:outline-green-900 text-sm text-white bg-slate-950 rounded-lg lg:w-60 md:w-56 w-30 h-8 inline-block m-auto px-4 border-slate-600 border-2">
-        </input>
-        <button id="submitbtn" type="button" class="cursor-pointer text-lg rounded bg-yellow-400 w-7 h-7 md:inline-block hidden">🔍</button>
-      </form>
-    </main>
-    <!-- MAIN END -->
+  <body style="overflow-x: hidden;">
 
-    <!-- ANIME START -->
-    <h1 id="txtAnime" class="mt-60 hidden text-white text-center md:text-3xl text-2xl" style="font-family: 'Freckle Face'">Anime</h1>
-    <section id="sectionAnime" class="flex justify-center flex-wrap m-auto pb-10" style="max-width:70em;"></section>
-    <!-- ANIME END -->
+    <!-- ═══ NAVIGATION / SEARCH BAR ═══ -->
+    <header class="search-navbar">
+      <div class="search-nav-inner">
 
-    <!-- MANGA START -->
-    <h1 id="txtManga" class="hidden text-white text-center md:text-3xl text-2xl mt-10" style="font-family: 'Freckle Face'">Manga</h1>
-    <section id="sectionManga" class="flex justify-center flex-wrap m-auto pb-10" style="max-width:70em;"></section>
-    <!-- MANGA END -->
+        <!-- Logo -->
+        <a href="../index.html" class="nav-logo">
+          <div>
+            <span class="nav-logo-text">Animalist</span>
+            <span class="nav-logo-sub">Your best choice</span>
+          </div>
+        </a>
 
-    <!-- CHARACTERS START -->
-    <h1 id="txtChar" class="hidden text-white text-center md:text-3xl text-2xl mt-10" style="font-family: 'Freckle Face'">Characters</h1>
-    <section id="sectionChar" class="flex justify-center flex-wrap m-auto pb-10" style="max-width:70em;"></section>
-    <!-- CHARACTERS END  -->
+        <!-- Search Form -->
+        <form class="search-form" action="" autocomplete="on">
+          <div class="search-input-wrapper">
+            <!-- Search icon -->
+            <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
 
-    <!-- BUTTON TOTOP TOBOTTOM START -->
-    <a id="toTop" href="#" class="fixed top-48 left-1/2 hidden h-fit" style="transform: translate(-50%,0);">
+            <input
+              autofocus
+              required
+              pattern="[a-zA-Z\d\s:!.]{1,}"
+              oninvalid="this.setCustomValidity('No symbols allowed!')"
+              onchange="this.setCustomValidity('')"
+              placeholder="Search anime, manga, characters..."
+              type="text"
+              class="search-input"
+            />
+
+            <button id="submitbtn" type="button" class="search-btn">
+              Search
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </header>
+    <!-- ═══ /NAVIGATION ═══ -->
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading-state">
+      <div class="loading-ring"></div>
+      <p class="loading-text">Searching the anime universe...</p>
+    </div>
+
+    <!-- ═══ ANIME RESULTS ═══ -->
+    <div class="results-section-header" id="headerAnime">
+      <h1 id="txtAnime" class="results-section-title" style="font-family: 'Freckle Face'">Anime</h1>
+      <div class="results-section-line"></div>
+    </div>
+    <section id="sectionAnime" class="results-section"></section>
+    <!-- ═══ /ANIME ═══ -->
+
+    <!-- ═══ MANGA RESULTS ═══ -->
+    <div class="results-section-header" id="headerManga">
+      <h1 id="txtManga" class="results-section-title" style="font-family: 'Freckle Face'">Manga</h1>
+      <div class="results-section-line"></div>
+    </div>
+    <section id="sectionManga" class="results-section"></section>
+    <!-- ═══ /MANGA ═══ -->
+
+    <!-- ═══ CHARACTER RESULTS ═══ -->
+    <div class="results-section-header" id="headerChar">
+      <h1 id="txtChar" class="results-section-title" style="font-family: 'Freckle Face'">Characters</h1>
+      <div class="results-section-line"></div>
+    </div>
+    <section id="sectionChar" class="results-section"></section>
+    <!-- ═══ /CHARACTERS ═══ -->
+
+    <!-- Scroll buttons -->
+    <a id="toTop" href="#" class="fixed top-36 left-1/2 hidden h-fit z-50" style="transform: translate(-50%,0);">
       <div style="background-image:url('../img/scrolldown.png');width:2em;height:2em" class="rotate-180 m-auto bg-cover bg-center cursor-pointer hover:scale-105 hover:opacity-90 transition"></div>
     </a>
-    <a id="toBottom" href="#end" class="fixed bottom-10 left-1/2 h-fit hidden" style="transform: translate(-50%,0);">
+    <a id="toBottom" href="#end" class="fixed bottom-10 left-1/2 h-fit hidden z-50" style="transform: translate(-50%,0);">
       <div style="background-image:url('../img/scrolldown.png');width:2em;height:2em" class="m-auto bg-cover bg-center cursor-pointer hover:scale-105 hover:opacity-90 transition"></div>
     </a>
-    <!-- BUTTON TOTOP TOBOTTOM END -->
 
-    <!-- DIV END -->
-    <div id="end" class="scroll-smooth"></div>
+    <div id="end" class="scroll-smooth" style="padding-bottom: 4rem;"></div>
+
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

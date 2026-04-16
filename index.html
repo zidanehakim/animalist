@@ -5,156 +5,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animalist | Anime Search</title>
 
-    <!-- TAILWIND START -->
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              gold: '#f7c948',
+              crimson: '#e63080',
+            }
           },
         },
       };
     </script>
-    <!-- TAILWIND END -->
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body style="overflow-x: hidden">
-    <div style="max-width: 120em" class="flex flex-cols flex-wrap content-center items-start m-auto shadow-2xl">
-      <!-- HEADER START -->
+    <div style="max-width: 120em" class="flex flex-col flex-wrap content-center items-start m-auto shadow-2xl">
+
+      <!-- ═══ HERO / HEADER ═══ -->
       <header style="width: 108em; height: 2000px" class="m-auto">
         <div style="height: 92vh; max-width: 108em" class="m-auto sticky top-0 overflow-hidden">
-          <div style="transform: translate(-50%, 0%)" class="drop-shadow-xl z-20 text text-white font-sans text-center title absolute left-1/2 bottom-0">
-            <h1 class="md:text-7xl text-5xl drop-shadow-xl" style="font-family: 'Freckle Face'">Animalist</h1>
-            <p class="md:text-xl text-lg drop-shadow-xl" style="font-family: 'Freckle Face'">Your best choice</p>
+
+          <!-- Hero Title -->
+          <div
+            style="transform: translate(-50%, 0%)"
+            class="drop-shadow-xl z-20 text-center title absolute left-1/2 bottom-0 text pb-2"
+          >
+            <h1
+              class="md:text-8xl text-5xl drop-shadow-xl hero-title"
+              style="font-family: 'Freckle Face'"
+            >Animalist</h1>
+            <span class="hero-subtitle">Discover &nbsp;·&nbsp; Explore &nbsp;·&nbsp; Obsess</span>
           </div>
 
-          <div style="height:100%;width:100%;background-color:  rgba(0,0,0,0.25);" class="z-10 absolute"></div>
-          <img class="lg:-bottom-40 -bottom-10 right-0 rock object-cover absolute z-20" src="img/rock.png" alt="Rock Vector" />
-          <img style="transform: translate(-50%, 0%);" class="leftrock object-cover absolute bottom-0 left-1/2 z-20" src="img/leftrock.png" alt="Left Rock Vector" />
-          <img style="transform: translate(-50%, 0%);" class="platform object-cover absolute bottom-0 left-1/2 z-10" src="img/platform.png" alt="Platform Vector" />
-          <img style="height:100%;transform: translate(-50%, 0%); width: 100%" class="opacity-80 bg object-cover absolute bottom-0 left-1/2 z-0" src="img/bg.png" alt="Background Vector" />
-          <svg class="block" fill="#F0C01D" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+          <!-- Dark overlay -->
+          <div
+            style="height:100%;width:100%;background: linear-gradient(to bottom, rgba(4,3,14,0.2) 0%, rgba(4,3,14,0.15) 60%, rgba(4,3,14,0.5) 100%);"
+            class="z-10 absolute"
+          ></div>
+
+          <!-- Parallax elements (keep classes for JS) -->
+          <img class="lg:-bottom-40 -bottom-10 right-0 rock object-cover absolute z-20" src="img/rock.png" alt="Rock" />
+          <img style="transform: translate(-50%, 0%);" class="leftrock object-cover absolute bottom-0 left-1/2 z-20" src="img/leftrock.png" alt="Left Rock" />
+          <img style="transform: translate(-50%, 0%);" class="platform object-cover absolute bottom-0 left-1/2 z-10" src="img/platform.png" alt="Platform" />
+          <img style="height:100%;transform: translate(-50%, 0%); width: 100%" class="opacity-80 bg object-cover absolute bottom-0 left-1/2 z-0" src="img/bg.png" alt="Background" />
+
+          <!-- Hero bottom wave -->
+          <svg class="block relative z-30" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path fill="#04030e" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
           </svg>
         </div>
       </header>
-      <!-- HEADER END -->
+      <!-- ═══ /HERO ═══ -->
 
-      <!-- SVG START -->
-      <div style="width:108em" class="m-auto">
-        <svg fill="#c7ba1c" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      <!-- Section divider wave -->
+      <div style="width:108em" class="m-auto -mt-1">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path fill="#04030e" fill-opacity="0.25" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
+          <path fill="#04030e" fill-opacity="0.5" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"></path>
+          <path fill="#04030e" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
         </svg>
       </div>
-      <!-- SVG END -->
 
-      <!-- SECTION ABOUT START -->
-      <section style="max-width: 70em" class="m-auto border-red-600 mt-20">
-        <div class="w-fit font-bold md:text-4xl text-2xl m-auto" style="font-family: 'Josefin Sans Thin'">
-          <h2 class="text-white">Keep on dreaming</h2>
-          <h2 class="text-white md:mx-20 mt-10">we <span class="text-fuchsia-400">weebs</span> are faithful</h2>
-          <h2 class="text-yellow-300 md:mx-40 mt-10">to our waifu ^^</h2>
+      <!-- ═══ ABOUT SECTION ═══ -->
+      <section style="max-width: 70em" class="m-auto mt-16 w-full px-6">
+        <div class="section-label" data-reveal>About</div>
+
+        <div class="w-fit md:text-4xl text-2xl m-auto mb-16" style="font-family: 'Josefin Sans Thin'" data-reveal>
+          <h2 class="text-white tracking-wide">Keep on dreaming</h2>
+          <h2 class="text-white md:mx-16 mt-8 tracking-wide">we <span class="text-crimson">weebs</span> are faithful</h2>
+          <h2 class="text-gold md:mx-32 mt-8 tracking-wide">to our waifu ^^</h2>
         </div>
 
-        <div class="about grid justify-center items-center mt-40" style="font-family: 'Mirza'">
-          <div class="grid justify-center md:justify-end">
-            <img style="width: 6em" src="img/orna1.png" alt="" />
-            <img class="z-10 hover:-translate-y-5 hover:scale-110 transition w-96 justify-self-end" src="img/char1.png" alt="Character1" />
+        <div class="about grid justify-center items-center mt-20" style="font-family: 'Mirza'">
+          <div class="grid justify-center md:justify-end" data-reveal>
+            <img style="width: 5em" class="orna mb-4 ml-auto" src="img/orna1.png" alt="" />
+            <img class="char-float z-10 w-96 justify-self-end" src="img/char1.png" alt="Character" />
           </div>
-          <p class="text-white md:text-2xl text-lg px-8 leading-loose mt-10 border-r-yellow-400 border-r-8">Website provides you with completed informations of an <span class="text-fuchsia-400">anime </span> you would like to search for!</p>
-        </div>
-      </section>
-      <!-- SECTION ABOUT END -->
-
-      <!-- SECTION CARDS START -->
-      <section style="max-width: 70em" class="m-auto border-red-600 md:mt-60 mt-20">
-        <div class="grid cards justify-center" style="font-family: 'Mirza';">
-          <div class="text">
-            <p class="text-white md:text-2xl text-lg px-4 text-center leading-loose mt-20 border-l-yellow-400 border-l-8">Top airing anime today! Read with ease and simple yet elegant UI.</p>
-            <ul class="text-white md:text-2xl text-lg text-center list-disc">
-              <li class="mt-8 mx-4 text-fuchsia-400">Vast informations Anime related</li>
-              <li class="mt-8 mx-4 text-fuchsia-400">Simple click access</li>
-              <li class="mt-8 mx-4 text-fuchsia-400">Visually great</li>
+          <div class="about-text-box text-white" data-reveal data-delay="2">
+            <p class="md:text-2xl text-lg leading-loose">
+              Website provides you with complete information of an
+              <span class="text-crimson">anime</span> you would like to search for!
+            </p>
+            <ul class="about-feature-list mt-6" style="font-family: 'Josefin Sans Thin'">
+              <li>Vast anime & manga database powered by Jikan API</li>
+              <li>Character lookup with kanji names & nicknames</li>
+              <li>Age-aware content filtering built in</li>
             </ul>
           </div>
-          <div class="relative mt-16 h-60 md:mx-8">
+        </div>
+      </section>
+      <!-- ═══ /ABOUT ═══ -->
+
+      <!-- ═══ CARDS / FEATURES SECTION ═══ -->
+      <section style="max-width: 70em" class="m-auto md:mt-48 mt-24 w-full px-6">
+        <div class="section-label" data-reveal>Featured</div>
+
+        <div class="grid cards justify-center" style="font-family: 'Mirza';">
+          <div class="cards-text-box" data-reveal>
+            <p class="text-white md:text-2xl text-lg leading-loose">
+              Top airing anime today! Browse with ease through a simple yet elegant interface.
+            </p>
+            <ul class="about-feature-list mt-8" style="font-family: 'Josefin Sans Thin'">
+              <li class="text-crimson" style="color: var(--crimson)">Vast anime & manga information</li>
+              <li style="color: var(--gold)">One-click search access</li>
+              <li style="color: #a78bfa">Visually immersive results</li>
+            </ul>
+          </div>
+
+          <div class="relative mt-16 h-64 md:mx-8" data-reveal data-delay="2">
             <img class="absolute right-0 bottom-0 z-10 orna" src="img/orna2.png" alt="" />
-            <img class="hover:-translate-y-5 hover:scale-110 transition object-cover -rotate-12 w-96 justify-self-end border-8 border-white absolute" src="img/aot.jpg" alt="AOT" />
-            <img style="right: 33%; top: -2em" class="hover:-translate-y-5 hover:scale-110 transition object-cover w-96 justify-self-end border-8 border-white absolute" src="img/bnha.jpg" alt="BNHA" />
-            <img style="right: 5%" class="hover:-translate-y-5 hover:scale-110 transition object-cover rotate-12 w-96 justify-self-end border-8 border-white absolute" src="img/kny.jpg" alt="KNY" />
+            <img class="anime-preview-card hover:-translate-y-5 hover:scale-110 transition object-cover -rotate-12 w-96 justify-self-end border-4 border-white/10 absolute" src="img/aot.jpg" alt="AOT" />
+            <img style="right: 33%; top: -2em" class="anime-preview-card hover:-translate-y-5 hover:scale-110 transition object-cover w-96 justify-self-end border-4 border-white/10 absolute" src="img/bnha.jpg" alt="BNHA" />
+            <img style="right: 5%" class="anime-preview-card hover:-translate-y-5 hover:scale-110 transition object-cover rotate-12 w-96 justify-self-end border-4 border-white/10 absolute" src="img/kny.jpg" alt="KNY" />
           </div>
         </div>
       </section>
-      <!-- SECTION CARDS END -->
+      <!-- ═══ /CARDS ═══ -->
 
-      <!-- SECTION WAIFU START -->
-      <section style="max-width: 75em" class="m-auto border-red-600 md:mt-60 mt-40">
-        <h2 class="text-white md:text-4xl text-3xl text-center font-bold" style="font-family: 'Josefin Sans Thin'">The <span class="text-fuchsia-400">Term</span> <span class="text-yellow-400">"Waifu"</span></h2>
-        <div class="waifu flex items-start justify-center mt-24 relative">
+      <!-- ═══ WAIFU SECTION ═══ -->
+      <section style="max-width: 75em" class="m-auto md:mt-56 mt-40 w-full px-6">
+        <div class="section-label" data-reveal>Characters</div>
+
+        <h2 class="md:text-4xl text-3xl text-center font-bold mb-20" style="font-family: 'Josefin Sans Thin'" data-reveal>
+          The <span class="text-crimson">Term</span> <span class="text-gold">"Waifu"</span>
+        </h2>
+
+        <div class="waifu flex items-end justify-center mt-16 relative" data-reveal>
           <img class="absolute right-48 -top-20 z-0 orna" src="img/orna3.png" alt="" />
-          <img class="hover:-translate-y-5 z-10 hover:scale-110 transition hidden md:block" class="" src="img/waifu1.png" alt="Waifu1" />
-          <img class="hover:-translate-y-5 z-10 hover:scale-110 transition" class="" src="img/waifu2.png" alt="Waifu2" />
-          <img class="hover:-translate-y-5 z-10 hover:scale-110 transition" class="" src="img/waifu3.png" alt="Waifu3" />
-          <img class="hover:-translate-y-5 z-10 hover:scale-110 transition" class="" src="img/waifu4.png" alt="Waifu4" />
-          <img class="hover:-translate-y-5 z-10 hover:scale-110 transition hidden md:block" class="" src="img/waifu5.png" alt="Waifu5" />
+          <img class="z-10 hidden md:block" src="img/waifu1.png" alt="Waifu1" />
+          <img class="z-10" src="img/waifu2.png" alt="Waifu2" />
+          <img class="z-10" src="img/waifu3.png" alt="Waifu3" />
+          <img class="z-10" src="img/waifu4.png" alt="Waifu4" />
+          <img class="z-10 hidden md:block" src="img/waifu5.png" alt="Waifu5" />
           <img class="absolute left-48 -bottom-12 z-0 orna" src="img/orna4.png" alt="" />
         </div>
-        <div class="text-white md:text-2xl text-lg grid grid-cols-1 md:grid-cols-2 mt-20 justify-center" style="font-family: 'Mirza'">
-          <div class="text-center">
-            <p>Various different types.</p>
-            <ul>
-              <li class="mt-8 mx-40 text-sky-300" style="list-style-type: '🥶';">Kuudere</li>
-              <li class="mt-8 mx-40 text-red-400" style="list-style-type: '🔥';">Tsundere</li>
-              <li class="mt-8 mx-40 text-pink-300" style="list-style-type: '🌸';">Dandere</li>
-              <li class="mt-8 mx-40 text-purple-300" style="list-style-type: '😈';">Yandere</li>
+
+        <div class="text-white md:text-xl text-lg grid grid-cols-1 md:grid-cols-2 mt-24 gap-12 justify-center" style="font-family: 'Mirza'">
+          <div data-reveal>
+            <p class="text-white/60 uppercase tracking-widest text-sm mb-6" style="font-family: 'Josefin Sans Thin'">Various Types</p>
+            <div class="waifu-type-grid">
+              <div class="waifu-type-card">
+                <span class="waifu-type-icon">🥶</span>
+                <div>
+                  <div class="waifu-type-name" style="color: #93c5fd;">Kuudere</div>
+                  <div style="font-size:0.75rem; color: var(--text-muted); font-family: 'Josefin Sans Thin'">Cool & Aloof</div>
+                </div>
+              </div>
+              <div class="waifu-type-card">
+                <span class="waifu-type-icon">🔥</span>
+                <div>
+                  <div class="waifu-type-name" style="color: #fca5a5;">Tsundere</div>
+                  <div style="font-size:0.75rem; color: var(--text-muted); font-family: 'Josefin Sans Thin'">Tough & Sweet</div>
+                </div>
+              </div>
+              <div class="waifu-type-card">
+                <span class="waifu-type-icon">🌸</span>
+                <div>
+                  <div class="waifu-type-name" style="color: #f9a8d4;">Dandere</div>
+                  <div style="font-size:0.75rem; color: var(--text-muted); font-family: 'Josefin Sans Thin'">Shy & Gentle</div>
+                </div>
+              </div>
+              <div class="waifu-type-card">
+                <span class="waifu-type-icon">😈</span>
+                <div>
+                  <div class="waifu-type-name" style="color: #c4b5fd;">Yandere</div>
+                  <div style="font-size:0.75rem; color: var(--text-muted); font-family: 'Josefin Sans Thin'">Obsessive</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="border-r-8 border-r-yellow-400 md:border-l-8 md:border-r-0 md:border-l-yellow-400 md:mx-0 md:px-20 mt-10 px-5 md:mt-0 leading-loose">Noun. <span class="text-fuchsia-400">waifu (plural waifu or waifus)</span> (fandom slang, Internet slang) A fictional female character from non-live-action visual media (typically an anime, manga, or video game) to whom one is romantically attracted and/or whom one considers their significant other.</p>
-        </div>
-        </ul>
-      </section>
-      <!-- SECTION WAIFU END -->
-      
-      <!-- SECTION STORY START -->
-      <section style="max-width: 70em;" class="m-auto border-red-600 mt-48 justify-center grid grid-cols-2 story">
-        <div class="relative" style="max-width:25em">
-          <img class="absolute -left-8 -top-8 z-10 rotate-12" style="width: 3em" src="img/orna5.png" alt="" />
-          <img class="absolute -left-8 -bottom-8 z-10" style="width: 3em" src="img/orna5.png" alt="" />
-          <img style="width:100%" class="hover:-translate-y-5 hover:scale-110 transition border-fuchsia-400 border-8" src="img/story1.png" alt="Story1">
-          <img style="width:100%" class="hover:-translate-y-5 hover:scale-110 transition border-yellow-400 border-8" src="img/story2.png" alt="Story2">
-        </div>
 
-        <div class="text-white md:text-5xl text-3xl pl-12 py-8 border-b-yellow-400 border-b-8 md:border-t-fuchsia-400 md:border-t-8 block" style="font-family: 'Mirza';">
-          <p class="mt-5">Read</p>
-          <p class="mt-16">Interesting</p>
-          <p class="mt-16 text-fuchsia-400">Arcs</p>
-          <p class="mt-16 text-yellow-400">Stories!</p>
+          <div class="waifu-definition-box" data-reveal data-delay="2">
+            <p class="text-sm uppercase tracking-widest text-white/40 mb-3" style="font-family: 'Josefin Sans Thin'">Noun</p>
+            <p class="leading-loose md:text-xl text-base">
+              <span class="text-crimson font-semibold">waifu</span> (plural waifu or waifus) — a fictional female character from non-live-action visual media, typically an anime, manga, or video game, to whom one is romantically attracted and considers their significant other.
+            </p>
+          </div>
         </div>
       </section>
-      <!-- SECTION STORY END -->
+      <!-- ═══ /WAIFU ═══ -->
 
-      <!-- SECTION GETTING STARTED START -->
-      <section style="width: 80em" class="m-auto border-red-600 mt-40 mb-10">
-        <h2 class="font-bold md:text-3xl text-2xl text-center text-white" style="font-family: 'Josefin Sans Thin'">
-          Getting Started
+      <!-- ═══ STORY SECTION ═══ -->
+      <section style="max-width: 70em;" class="m-auto mt-48 w-full px-6">
+        <div class="section-label" data-reveal>Stories</div>
+
+        <div class="justify-center grid grid-cols-2 story gap-0" style="border-radius: 20px; overflow: hidden; border: 1px solid var(--border);">
+          <div class="story-img-wrapper relative" data-reveal>
+            <img class="absolute -left-2 -top-2 z-10 rotate-12" style="width: 2.5em" src="img/orna5.png" alt="" />
+            <img class="absolute -left-2 -bottom-2 z-10" style="width: 2.5em" src="img/orna5.png" alt="" />
+            <img style="width:100%; display:block;" class="story-img hover:-translate-y-3 transition border-crimson border-4" src="img/story1.png" alt="Story1">
+            <img style="width:100%; display:block;" class="story-img hover:-translate-y-3 transition border-gold border-4" src="img/story2.png" alt="Story2">
+          </div>
+
+          <div class="story-text-block">
+            <p class="mt-2 text-white">Read</p>
+            <p class="mt-8 text-white">Interesting</p>
+            <p class="mt-8 text-crimson">Arcs</p>
+            <p class="mt-8 text-gold">Stories!</p>
+          </div>
+        </div>
+      </section>
+      <!-- ═══ /STORY ═══ -->
+
+      <!-- ═══ GETTING STARTED CTA ═══ -->
+      <section style="max-width: 80em" class="m-auto mt-40 mb-24 w-full px-6 cta-section">
+        <div class="section-label justify-center" style="max-width: 24rem; margin-left: auto; margin-right: auto; margin-bottom: 1.5rem;">Getting Started</div>
+        <h2 class="cta-heading" style="font-family: 'Josefin Sans Thin'">
+          Your anime journey awaits
         </h2>
-        <a href="page/page.html" class="w-fit">
-          <div style="background-image:url('img/pulldown.png');width:3em;height:3em" class="mt-8 m-auto bg-cover bg-center cursor-pointer hover:scale-105 hover:opacity-90 transition"></div>
+        <a href="page/page.html" class="cta-btn">
+          <span>Start Searching</span>
+          <span class="cta-arrow">→</span>
         </a>
       </section>
-      <!-- SECTION GETTING STARTED END -->
+      <!-- ═══ /CTA ═══ -->
 
-      <!-- BUTTON TOBOTTOM START -->
+      <!-- Scroll to bottom button -->
       <a id="toBottom" href="#end" class="fixed bottom-20 left-1/2 h-fit z-50" style="transform: translate(-50%,0);">
-        <div style="background-image:url('img/scrolldown.png');width:2em;height:2em" class="z-50 m-auto bg-cover bg-center cursor-pointer hover:scale-105 hover:opacity-90 transition"></div>
+        <div
+          style="background-image:url('img/scrolldown.png');width:2em;height:2em"
+          class="z-50 m-auto bg-cover bg-center cursor-pointer hover:scale-105 hover:opacity-90 transition"
+        ></div>
       </a>
-      <!-- BUTTON TOTOP TOBOTTOM END -->
 
-      <!-- DIV END -->
       <div id="end" class="scroll-smooth"></div>
     </div>
+
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

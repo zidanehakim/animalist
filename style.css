@@ -1,114 +1,512 @@
+/* =========================================
+   ANIMALIST — LANDING PAGE STYLES
+   Dark Cinematic Anime Aesthetic
+   ========================================= */
+
+/* === CUSTOM FONTS === */
 @font-face {
   font-family: "Freckle Face";
   src: url("font/FreckleFace-Regular.woff2") format("woff2");
 }
-
 @font-face {
   font-family: "Josefin Sans Thin";
   src: url("font/JosefinSans-ExtraLight.woff2") format("woff2");
 }
-
 @font-face {
   font-family: "Mirza";
   src: url("font/Mirza-Regular.woff2") format("woff2");
 }
 
+/* === DESIGN TOKENS === */
+:root {
+  --gold: #f7c948;
+  --gold-soft: rgba(247, 201, 72, 0.15);
+  --gold-glow: rgba(247, 201, 72, 0.4);
+  --crimson: #e63080;
+  --crimson-soft: rgba(230, 48, 128, 0.12);
+  --crimson-glow: rgba(230, 48, 128, 0.4);
+  --indigo: #5b4fcf;
+  --bg: #04030e;
+  --bg-surface: rgba(255, 255, 255, 0.04);
+  --bg-surface-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(247, 201, 72, 0.3);
+  --text: #ede9f8;
+  --text-muted: #6b6b8a;
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* === BASE RESET === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+
+/* === BODY & BACKGROUND === */
 body {
-  background-color: #0c061a;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23414305' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23FFFFFF'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 90% 70% at 5% -15%, rgba(91, 79, 207, 0.2) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 55% at 95% 110%, rgba(230, 48, 128, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(247, 201, 72, 0.03) 0%, transparent 70%);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-li {
-  list-style-type: "👉";
-  padding-inline-start: 1ch;
+/* Atmospheric grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
 }
 
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold), var(--crimson));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* === HERO TITLE === */
+.hero-title {
+  background: linear-gradient(135deg, #fff 0%, var(--gold) 35%, #fff8e0 60%, var(--gold) 85%, #fff 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation:
+    titleReveal 1.4s var(--transition-smooth) both,
+    shimmerText 5s linear 1.4s infinite;
+  filter: drop-shadow(0 0 30px rgba(247, 201, 72, 0.55));
+  line-height: 1.1 !important;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-family: 'Josefin Sans Thin', sans-serif !important;
+  font-size: clamp(0.6rem, 1.8vw, 0.8rem) !important;
+  letter-spacing: 0.55em !important;
+  text-transform: uppercase;
+  color: rgba(247, 201, 72, 0.7) !important;
+  animation: subtitleReveal 1.2s var(--transition-smooth) 0.6s both;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+    filter: blur(16px) drop-shadow(0 0 0 transparent);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 30px rgba(247, 201, 72, 0.55));
+  }
+}
+
+@keyframes subtitleReveal {
+  from { opacity: 0; letter-spacing: 0.9em; }
+  to { opacity: 1; letter-spacing: 0.55em; }
+}
+
+@keyframes shimmerText {
+  0% { background-position: 0% center; }
+  100% { background-position: 250% center; }
+}
+
+/* SVG wave fills are set directly via fill attributes in HTML (no CSS var needed) */
+
+/* === SCROLL REVEAL SYSTEM === */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s var(--transition-smooth),
+    transform 0.9s var(--transition-smooth);
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal][data-delay="1"] { transition-delay: 0.1s; }
+[data-reveal][data-delay="2"] { transition-delay: 0.22s; }
+[data-reveal][data-delay="3"] { transition-delay: 0.38s; }
+[data-reveal][data-delay="4"] { transition-delay: 0.52s; }
+
+/* === SECTION LABEL DIVIDERS === */
+.section-label {
+  font-family: 'Josefin Sans Thin', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.45em;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+}
+.section-label::before { background: linear-gradient(to right, transparent, var(--border)); }
+.section-label::after { background: linear-gradient(to left, transparent, var(--border)); }
+
+/* === GRADIENT TEXT UTILITIES ===
+   Note: named differently from Tailwind utilities (text-gold, text-crimson)
+   to avoid specificity conflicts with Tailwind CDN color extensions. */
+.grad-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, #fff4c4 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.grad-crimson {
+  background: linear-gradient(135deg, var(--crimson) 0%, #ffb3d4 50%, var(--crimson) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === GLASS CARD === */
+.glass-card {
+  background: var(--bg-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(247,201,72,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* === ABOUT SECTION === */
+.about {
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-text-box {
+  position: relative;
+  padding: 2.5rem 2rem 2.5rem 2.5rem;
+  border-radius: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-right: 3px solid var(--gold);
+  backdrop-filter: blur(16px);
+  line-height: 1.85;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+.about-text-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(247,201,72,0.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.about-feature-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.about-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Josefin Sans Thin', sans-serif;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.about-feature-list li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+/* === CHARACTER FLOATING ANIMATION === */
+.char-float {
+  animation: charFloat 5s ease-in-out infinite;
+}
+@keyframes charFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(1deg); }
+}
+
+/* === ANIME CARD PREVIEWS === */
+.anime-preview-card {
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  overflow: hidden;
+  transition: all 0.4s var(--transition-smooth);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.anime-preview-card:hover {
+  transform: translateY(-10px) scale(1.04) !important;
+  border-color: rgba(247, 201, 72, 0.5);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(247, 201, 72, 0.15);
+  z-index: 10;
+}
+
+/* === CARDS SECTION TEXT === */
+.cards-text-box {
+  position: relative;
+  padding: 2rem 2rem 2rem 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 20px 20px 0;
+  backdrop-filter: blur(12px);
+}
+
+/* === WAIFU SECTION === */
+.waifu img {
+  transition: all 0.4s var(--transition-smooth);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+}
+.waifu img:hover {
+  transform: translateY(-14px) scale(1.06) !important;
+  filter: drop-shadow(0 20px 40px rgba(230, 48, 128, 0.3));
+}
+
+.waifu-type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.waifu-type-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.125rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s var(--transition-smooth);
+  cursor: default;
+}
+.waifu-type-card:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--border-hover);
+  transform: translateX(6px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.waifu-type-icon { font-size: 1.4rem; flex-shrink: 0; }
+.waifu-type-name {
+  font-family: 'Josefin Sans Thin', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.waifu-definition-box {
+  position: relative;
+  padding: 2.5rem 2rem 2rem 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 16px 16px 0;
+  line-height: 1.85;
+  backdrop-filter: blur(12px);
+}
+.waifu-definition-box::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  font-family: 'Freckle Face', cursive;
+  font-size: 5rem;
+  color: var(--gold);
+  opacity: 0.15;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* === STORY SECTION === */
+.story-img-wrapper {
+  position: relative;
+}
+.story-img-wrapper img {
+  transition: all 0.4s var(--transition-smooth);
+  border-radius: 4px;
+}
+.story-img-wrapper img:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  z-index: 10;
+  position: relative;
+}
+
+.story-text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--crimson);
+  border-bottom: 3px solid var(--gold);
+  border-radius: 0 20px 20px 0;
+  backdrop-filter: blur(12px);
+}
+.story-text-block p {
+  font-family: 'Mirza', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+/* === CTA SECTION === */
+.cta-section {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.cta-heading {
+  font-family: 'Josefin Sans Thin', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--gold) 0%, #d4a017 100%);
+  color: #0a0700;
+  font-family: 'Josefin Sans Thin', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s var(--transition-smooth);
+  box-shadow: 0 4px 30px var(--gold-glow);
+  text-decoration: none;
+}
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 60px var(--gold-glow), 0 0 80px rgba(247, 201, 72, 0.15);
+}
+.cta-btn:hover::before { opacity: 1; }
+.cta-btn:active { transform: translateY(-1px); }
+.cta-arrow {
+  display: inline-block;
+  transition: transform 0.35s var(--transition-smooth);
+  font-size: 1.1rem;
+}
+.cta-btn:hover .cta-arrow { transform: translateX(5px); }
+
+/* === SCROLL BUTTON === */
+#toBottom {
+  animation: floatBtn 3s ease-in-out infinite;
+}
+@keyframes floatBtn {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -9px); }
+}
+
+/* === DECORATIVE ORN ELEMENTS === */
+.orna {
+  opacity: 0.75;
+  animation: ornaFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(247,201,72,0.2));
+}
+@keyframes ornaFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(3deg); }
+  66% { transform: translateY(-4px) rotate(-2deg); }
+}
+
+/* === CARDS GRID === */
+.cards {
+  display: grid;
+  gap: 3rem;
+}
+
+/* === RESPONSIVE LAYOUT === */
 @media (max-width: 400px) {
   .about {
     grid-template-columns: 0.7fr;
-    grid-template-rows: 0.1fr 0.3fr;
+    grid-template-rows: auto auto;
   }
-
-  .about img:last-child {
-    width: 10em;
-  }
-
+  .about img:last-child { width: 10em; }
   .cards {
     grid-template-columns: 0.8fr;
-    grid-template-rows: 0.1fr 0.1fr;
+    grid-template-rows: auto auto;
   }
-
-  .cards div:last-child img:not(.orna) {
-    width: 5em;
-  }
-
-  .waifu img {
-    width: 5em;
-  }
-
-  div .orna {
-    width: 4em;
-  }
-
-  div .story {
-    grid-template-columns: 1fr;
-  }
+  .cards div:last-child img:not(.orna) { width: 5em; }
+  .waifu img { width: 5em; }
+  div .orna { width: 4em; }
+  .story { grid-template-columns: 1fr; }
+  .waifu-type-grid { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 768px) {
   .about {
     grid-template-columns: 0.5fr 1.5fr;
   }
-
-  .about img:last-child {
-    width: 13em;
-  }
-
+  .about img:last-child { width: 13em; }
   .cards {
     grid-template-columns: 1.3fr 1.5fr;
   }
-
-  .cards div:last-child img:not(.orna) {
-    width: 12em;
-  }
-
-  div .waifu img {
-    width: 8em;
-  }
-
-  .orna {
-    width: 6em;
-  }
+  .cards div:last-child img:not(.orna) { width: 12em; }
+  div .waifu img { width: 8em; }
+  .orna { width: 6em; }
 }
 
 @media (max-width: 768px) {
   .about {
     grid-template-columns: 0.7fr;
-    grid-template-rows: 0.1fr 0.3fr;
+    grid-template-rows: auto auto;
   }
-
-  .about img:last-child {
-    width: 10em;
-  }
-
+  .about img:last-child { width: 10em; }
   .cards {
     grid-template-columns: 0.8fr;
-    grid-template-rows: 0.1fr 0.1fr;
+    grid-template-rows: auto auto;
   }
-
-  .cards div:last-child img:not(.orna) {
-    width: 8em;
-  }
-
-  .waifu img {
-    width: 6em;
-  }
-
-  div .orna {
-    width: 4em;
-  }
-
-  div .story {
-    grid-template-columns: 1fr;
-  }
+  .cards div:last-child img:not(.orna) { width: 8em; }
+  .waifu img { width: 6em; }
+  div .orna { width: 4em; }
+  .story { grid-template-columns: 1fr; }
 }
